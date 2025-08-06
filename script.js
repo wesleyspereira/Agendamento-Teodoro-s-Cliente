@@ -30,30 +30,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function mostrarHorarios(dia, data) {
-    tituloDia.textContent = `⏰Horários disponíveis para ${data}`;
-    listaHorarios.innerHTML = "";
+function mostrarHorarios(dia, data) {
+  tituloDia.textContent = `⏰Horários disponíveis para ${data}`;
+  listaHorarios.innerHTML = "";
 
-    const horarios = (dia === "sexta" || dia === "sabado") ? horariosExtendidos : horariosNormais;
+  // 🔁 Remover seleção de outros botões
+  document.querySelectorAll("#calendario-mensal button").forEach(btn => {
+    btn.classList.remove("selecionado");
+  });
 
-    horarios.forEach(h => {
-      const agendamento = agendamentos.find(a => a.data === data && a.horario === h);
-      const li = document.createElement("li");
+  // ✅ Destacar botão clicado
+  const botoes = document.querySelectorAll("#calendario-mensal button");
+  botoes.forEach(btn => {
+    if (btn.textContent.includes(data)) {
+      btn.classList.add("selecionado");
+    }
+  });
 
-      if (agendamento) {
-        if (agendamento.nome !== "Bloqueado") {
-          li.innerHTML = `<strong>${h}</strong> - 📌Reservado `;
-        } else {
-          li.textContent = `${h} -  Indisponível`;
-        }
+  // ⬇️ Scroll suave para os horários
+  setTimeout(() => {
+    listaHorarios.scrollIntoView({ behavior: "smooth" });
+  }, 100);
+
+  const horarios = (dia === "sexta" || dia === "sabado") ? horariosExtendidos : horariosNormais;
+
+  horarios.forEach(h => {
+    const agendamento = agendamentos.find(a => a.data === data && a.horario === h);
+    const li = document.createElement("li");
+
+    if (agendamento) {
+      if (agendamento.nome !== "Bloqueado") {
+        li.innerHTML = `<strong>${h}</strong> - 📌Reservado `;
       } else {
-        li.innerHTML = `<strong>${h}</strong> - ✅Disponível 
-          <button onclick="agendar('${data}', '${h}')" class="agendar">Agendar</button>`;
+        li.textContent = `${h} -  ❌Indisponível`;
       }
+    } else {
+      li.innerHTML = `<strong>${h}</strong> - ✅Disponível 
+        <button onclick="agendar('${data}', '${h}')" class="agendar">Agendar</button>`;
+    }
 
-      listaHorarios.appendChild(li);
-    });
-  }
+    listaHorarios.appendChild(li);
+  });
+}
 
   window.agendar = (data, horario) => {
     // Sempre solicitar nome e telefone
