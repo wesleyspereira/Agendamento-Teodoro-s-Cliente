@@ -2,9 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: url('fundo.png') no-repeat center center fixed;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: black;
+  background-size: cover;
   color: #fff;
 }
 
@@ -132,9 +130,11 @@ ul li:hover {
 .cancelar:hover {
   background-color: #c72b37;
 }
+
+/* RESPONSIVO PARA MOBILE */
 @media (max-width: 768px) {
   .grid-dias {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em vez de 5 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
