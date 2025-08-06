@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (agendamento.nome !== "Bloqueado") {
           li.innerHTML = `<strong>${h}</strong> - 📌Reservado `;
         } else {
-          li.textContent = `${h} -  ❌Indisponível`;
+          li.textContent = `${h} -  Indisponível`;
         }
       } else {
         li.innerHTML = `<strong>${h}</strong> - ✅Disponível 
