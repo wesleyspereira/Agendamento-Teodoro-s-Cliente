@@ -1,35 +1,30 @@
+*
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('fundo.png') no-repeat center center fixed;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: black;
+  background: url('img/fundo.png') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
 }
-
 header {
   text-align: center;
   padding: 10px;
   background: rgba(0,0,0,0.7);
 }
-
 .logo {
   max-width: 150px;
 }
-
 main {
   padding: 20px;
   background: rgba(0,0,0,0.6);
   text-align: center;
-}
 
+}
 .menu {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
-
 .menu-btn {
   background: #333;
   color: #fff;
@@ -38,18 +33,15 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
-
 .menu-btn.active {
   background: #10b981;
 }
-
 .grid-dias {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   margin-bottom: 20px;
 }
-
 .grid-dias button {
   background: #444;
   color: #fff;
@@ -59,7 +51,6 @@ main {
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
 }
-
 .grid-dias button:hover {
   background: #10b981;
   transform: scale(1.05);
@@ -69,7 +60,6 @@ ul {
   list-style: none;
   padding: 0;
 }
-
 ul li {
   background: #2c2c2c;
   padding: 10px;
@@ -77,7 +67,6 @@ ul li {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-
 ul li:hover {
   background: #3a3a3a;
   transform: translateX(5px);
@@ -89,7 +78,6 @@ ul li:hover {
   margin-bottom: 30px;
   color: #f9fcfc;
 }
-
 .rodape {
   text-align: center;
   padding: 15px;
@@ -102,7 +90,6 @@ ul li:hover {
   margin-top: 40px;
   border-top: 1px solid #444;
 }
-
 .agendar {
   background-color: #10b981;
   color: white;
@@ -113,7 +100,6 @@ ul li:hover {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .agendar:hover {
   background-color: #0e9e6e;
 }
@@ -128,47 +114,7 @@ ul li:hover {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .cancelar:hover {
   background-color: #c72b37;
 }
 
-/* ✅ Responsividade para celulares */
-@media (max-width: 600px) {
-  .grid-dias {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-btn {
-    width: 90%;
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  main {
-    padding: 15px;
-  }
-
-  h1, h2 {
-    font-size: 20px;
-  }
-
-  .logo {
-    max-width: 100px;
-  }
-
-  ul li {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .agendar, .cancelar {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-}
