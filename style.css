@@ -132,16 +132,19 @@ ul li:hover {
 }
 
 /* RESPONSIVO PARA MOBILE */
+/* MELHORIA PARA MOBILE */
 @media (max-width: 768px) {
   .grid-dias {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* reduz para 2 por linha */
     gap: 12px;
+    justify-content: center;
   }
 
   .grid-dias button {
     font-size: 16px;
     padding: 14px;
     border-radius: 8px;
+    width: 100%;
   }
 
   .menu {
@@ -177,6 +180,7 @@ ul li:hover {
   }
 
   .logo {
-    max-width: 120px;
+    max-width: 100px;
   }
 }
+
