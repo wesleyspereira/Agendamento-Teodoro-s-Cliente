@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('img/fundo.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+header {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+}
+.logo {
+  max-width: 150px;
+}
+main {
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+
+}
+.menu {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.menu-btn {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.menu-btn.active {
+  background: #10b981;
+}
+.grid-dias {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.grid-dias button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.grid-dias button:hover {
+  background: #10b981;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  background: #2c2c2c;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+ul li:hover {
+  background: #3a3a3a;
+  transform: translateX(5px);
+}
+
+.saudacao {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #f9fcfc;
+}
+.rodape {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+}
+.agendar {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.agendar:hover {
+  background-color: #0e9e6e;
+}
+
+.cancelar {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.cancelar:hover {
+  background-color: #c72b37;
+}
+
